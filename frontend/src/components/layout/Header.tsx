@@ -12,6 +12,7 @@ import styles from './Header.module.css';
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/send', label: 'Send' },
+  { to: '/wallet', label: 'Wallet' },
   { to: '/dashboard', label: 'Dashboard' },
 ];
 

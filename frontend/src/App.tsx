@@ -23,6 +23,9 @@ import { lazy, Suspense } from 'react';
 const TransferPage = lazy(() =>
   import('./features/transfer/TransferPage').then((mod) => ({ default: mod.TransferPage }))
 );
+const WalletPage = lazy(() =>
+  import('./features/wallet/WalletPage').then((mod) => ({ default: mod.WalletPage }))
+);
 
 function App() {
   const { checkExistingConnection, checkFreighter } = useWalletStore();
@@ -50,6 +53,14 @@ function App() {
                 element={
                   <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh', color: 'var(--color-text-secondary, #94a3b8)' }}>Loading...</div>}>
                     <TransferPage />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/wallet"
+                element={
+                  <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh', color: 'var(--color-text-secondary, #94a3b8)' }}>Loading...</div>}>
+                    <WalletPage />
                   </Suspense>
                 }
               />

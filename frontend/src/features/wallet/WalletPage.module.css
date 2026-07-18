@@ -1,0 +1,382 @@
+.page {
+  min-height: calc(100vh - 64px);
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: var(--space-8) var(--space-4);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ============================================================
+   Header Section
+   ============================================================ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--space-1) 0;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.addressBar {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.addressText {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.copyBtn {
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  font-size: var(--text-xs);
+  cursor: pointer;
+  padding: 0;
+  font-weight: var(--font-semibold);
+  transition: opacity var(--transition-fast);
+}
+
+.copyBtn:hover {
+  opacity: 0.8;
+}
+
+/* ============================================================
+   Portfolio Card
+   ============================================================ */
+.portfolioCard {
+  background: var(--glass-background) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border) !important;
+}
+
+.portfolioInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.portfolioLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.portfolioBalance {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--color-text);
+  line-height: var(--leading-none);
+  margin-bottom: var(--space-2);
+}
+
+.xlmDenomination {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+}
+
+.networkBadge {
+  display: inline-block;
+  font-size: var(--text-xxs);
+  font-weight: var(--font-semibold);
+  color: var(--color-warning);
+  background: rgba(245, 158, 11, 0.1);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.portfolioActions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+/* ============================================================
+   Assets Section
+   ============================================================ */
+.assetsSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  margin: 0 0 var(--space-1) 0;
+  color: var(--color-text);
+}
+
+.sectionSubtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.assetsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.assetCard {
+  background: var(--color-surface-1) !important;
+  border: 1px solid var(--color-border) !important;
+  transition: transform var(--transition-default), border-color var(--transition-default);
+}
+
+.assetCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.3) !important;
+}
+
+.assetHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.assetBadgeIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-lg);
+  border: 1px solid var(--color-border);
+}
+
+.assetCode {
+  font-size: var(--text-md);
+  font-weight: var(--font-bold);
+  margin: 0;
+  color: var(--color-text);
+}
+
+.assetName {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.assetDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-surface-3);
+  padding-top: var(--space-3);
+}
+
+.assetBalance {
+  font-size: var(--text-md);
+  font-weight: var(--font-bold);
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--color-text);
+}
+
+.assetBalanceEmpty {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.trustlineBadgeActive {
+  font-size: var(--text-xxs);
+  font-weight: var(--font-semibold);
+  color: var(--color-success);
+  background: rgba(16, 185, 129, 0.1);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+}
+
+.addTrustlineBtn {
+  font-size: var(--text-xxs) !important;
+  padding: var(--space-1) var(--space-3) !important;
+}
+
+/* ============================================================
+   Receive Modal Content
+   ============================================================ */
+.receiveModalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.qrContainer {
+  background: white;
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.qrImage {
+  width: 160px;
+  height: 160px;
+  display: block;
+}
+
+.receiveModalText {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+.modalAddressBar {
+  display: flex;
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  background: var(--color-surface-2);
+}
+
+.modalAddressInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: var(--text-xxs);
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text);
+  outline: none;
+}
+
+.modalCopyBtn {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0 var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.modalCopyBtn:hover {
+  opacity: 0.9;
+}
+
+.modalWarning {
+  font-size: var(--text-xxs);
+  color: var(--color-warning);
+  background: rgba(245, 158, 11, 0.05);
+  border: 1px dashed rgba(245, 158, 11, 0.2);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  line-height: var(--leading-relaxed);
+  width: 100%;
+}
+
+/* ============================================================
+   Disconnected State
+   ============================================================ */
+.disconnectedContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 480px;
+  margin: auto;
+  gap: var(--space-4);
+}
+
+.walletIconContainer {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+}
+
+.walletLargeIcon {
+  font-size: 40px;
+}
+
+.disconnectedTitle {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.disconnectedSubtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin: 0 0 var(--space-2) 0;
+}
+
+/* ============================================================
+   Responsive Breakpoints
+   ============================================================ */
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .portfolioInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .portfolioActions {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .portfolioActions button {
+    width: 100%;
+  }
+
+  .assetsGrid {
+    grid-template-columns: 1fr;
+  }
+}

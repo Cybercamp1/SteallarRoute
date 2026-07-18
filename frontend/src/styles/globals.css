@@ -1,0 +1,299 @@
+/* ============================================================
+   AnchorRoute — Global Design Tokens & Reset
+   Deep-space fintech theme
+   ============================================================ */
+
+/* ---- Google Fonts ---- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ---- CSS Reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ---- Design Tokens ---- */
+:root {
+  /* — Backgrounds — */
+  --color-bg-primary: #0a0e27;
+  --color-bg-secondary: #080b1e;
+  --color-bg-elevated: #0d1130;
+
+  /* — Surfaces — */
+  --color-surface-1: #111631;
+  --color-surface-2: #1a1f44;
+  --color-surface-3: #252b5e;
+
+  /* — Text — */
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+  --color-text-inverse: #0a0e27;
+
+  /* — Accent: Indigo / Stellar Blue — */
+  --color-primary: #6366f1;
+  --color-primary-hover: #818cf8;
+  --color-primary-active: #4f46e5;
+  --color-primary-muted: rgba(99, 102, 241, 0.15);
+  --color-primary-ghost: rgba(99, 102, 241, 0.08);
+
+  /* — Accent: Emerald / Aurora Green — */
+  --color-success: #10b981;
+  --color-success-hover: #34d399;
+  --color-success-active: #059669;
+  --color-success-muted: rgba(16, 185, 129, 0.15);
+
+  /* — Warning / Gold — */
+  --color-warning: #f59e0b;
+  --color-warning-hover: #fbbf24;
+  --color-warning-active: #d97706;
+  --color-warning-muted: rgba(245, 158, 11, 0.15);
+
+  /* — Error / Red — */
+  --color-error: #ef4444;
+  --color-error-hover: #f87171;
+  --color-error-active: #dc2626;
+  --color-error-muted: rgba(239, 68, 68, 0.15);
+
+  /* — Info / Cyan — */
+  --color-info: #06b6d4;
+  --color-info-hover: #22d3ee;
+  --color-info-active: #0891b2;
+  --color-info-muted: rgba(6, 182, 212, 0.15);
+
+  /* — Borders — */
+  --color-border: rgba(99, 102, 241, 0.15);
+  --color-border-strong: rgba(99, 102, 241, 0.3);
+  --color-border-subtle: rgba(99, 102, 241, 0.08);
+
+  /* — Overlay — */
+  --color-overlay: rgba(10, 14, 39, 0.75);
+  --color-overlay-heavy: rgba(10, 14, 39, 0.9);
+
+  /* — Gradient — */
+  --gradient-primary: linear-gradient(135deg, #6366f1, #818cf8);
+  --gradient-primary-hover: linear-gradient(135deg, #818cf8, #a5b4fc);
+  --gradient-hero: linear-gradient(135deg, #0a0e27 0%, #111631 50%, #1a1f44 100%);
+  --gradient-card: linear-gradient(
+    145deg,
+    rgba(17, 22, 49, 0.6),
+    rgba(26, 31, 68, 0.4)
+  );
+  --gradient-shimmer: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.06) 50%,
+    transparent 100%
+  );
+
+  /* ---- Typography ---- */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  /* Font sizes */
+  --text-xs: 0.75rem;       /* 12px */
+  --text-sm: 0.875rem;      /* 14px */
+  --text-base: 1rem;        /* 16px */
+  --text-lg: 1.125rem;      /* 18px */
+  --text-xl: 1.25rem;       /* 20px */
+  --text-2xl: 1.5rem;       /* 24px */
+  --text-3xl: 1.875rem;     /* 30px */
+  --text-4xl: 2.25rem;      /* 36px */
+
+  /* Font weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Line heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+  /* Letter spacing */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+
+  /* ---- Spacing (4px base) ---- */
+  --space-0: 0;
+  --space-px: 1px;
+  --space-0-5: 0.125rem;   /* 2px  */
+  --space-1: 0.25rem;      /* 4px  */
+  --space-1-5: 0.375rem;   /* 6px  */
+  --space-2: 0.5rem;       /* 8px  */
+  --space-3: 0.75rem;      /* 12px */
+  --space-4: 1rem;         /* 16px */
+  --space-5: 1.25rem;      /* 20px */
+  --space-6: 1.5rem;       /* 24px */
+  --space-7: 1.75rem;      /* 28px */
+  --space-8: 2rem;         /* 32px */
+  --space-10: 2.5rem;      /* 40px */
+  --space-12: 3rem;        /* 48px */
+  --space-14: 3.5rem;      /* 56px */
+  --space-16: 4rem;        /* 64px */
+
+  /* ---- Border Radii ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.26);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4), 0 6px 10px rgba(0, 0, 0, 0.28);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.5);
+  --shadow-glow-primary: 0 0 20px rgba(99, 102, 241, 0.3),
+    0 0 40px rgba(99, 102, 241, 0.1);
+  --shadow-glow-success: 0 0 20px rgba(16, 185, 129, 0.3),
+    0 0 40px rgba(16, 185, 129, 0.1);
+  --shadow-glow-error: 0 0 20px rgba(239, 68, 68, 0.3),
+    0 0 40px rgba(239, 68, 68, 0.1);
+
+  /* ---- Transitions ---- */
+  --transition-fast: 150ms ease-out;
+  --transition-default: 200ms ease-out;
+  --transition-slow: 300ms ease-out;
+  --transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ---- Z-Index Scale ---- */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+
+  /* ---- Glassmorphism ---- */
+  --glass-bg: rgba(17, 22, 49, 0.6);
+  --glass-bg-strong: rgba(17, 22, 49, 0.8);
+  --glass-blur: blur(20px);
+  --glass-border: 1px solid rgba(99, 102, 241, 0.12);
+
+  /* ---- Misc ---- */
+  --container-max-width: 1200px;
+  --header-height: 64px;
+}
+
+/* ---- Body ---- */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-3);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-surface-3) var(--color-bg-secondary);
+}
+
+/* ---- Selection ---- */
+::selection {
+  background-color: rgba(99, 102, 241, 0.35);
+  color: var(--color-text-primary);
+}
+
+::-moz-selection {
+  background-color: rgba(99, 102, 241, 0.35);
+  color: var(--color-text-primary);
+}
+
+/* ---- Focus Visible ---- */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}

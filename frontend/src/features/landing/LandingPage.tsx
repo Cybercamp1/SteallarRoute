@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import styles from './LandingPage.module.css';
 
 /* ─── Animated Counter Hook ─── */
@@ -224,6 +225,19 @@ function StatCounter({ value, suffix, label }: Stat) {
    ═══════════════════════════════════════════ */
 
 const LandingPage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleStartSending = useCallback(() => {
+    navigate('/send');
+  }, [navigate]);
+
+  const handleScrollToHowItWorks = useCallback(() => {
+    const element = document.getElementById('how-it-works');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
   /* Animated counters for hero stats */
   const routesScanned = useAnimatedCounter(1200, 2000, '+');
   const transferred = useAnimatedCounter(50, 2000, 'K+');
@@ -238,7 +252,7 @@ const LandingPage: React.FC = () => {
   return (
     <div className={styles.landingPage}>
       {/* ═══════════ HERO ═══════════ */}
-      <section className={styles.hero} aria-label="Hero section">
+      <section id="hero" className={styles.hero} aria-label="Hero section">
         {/* Floating gradient orbs */}
         <div className={styles.orbContainer} aria-hidden="true">
           <div className={`${styles.orb} ${styles.orb1}`} />
@@ -256,10 +270,20 @@ const LandingPage: React.FC = () => {
           </p>
 
           <div className={styles.heroCta}>
-            <button type="button" className={styles.btnPrimary} aria-label="Start sending payments">
+            <button
+              type="button"
+              className={styles.btnPrimary}
+              aria-label="Start sending payments"
+              onClick={handleStartSending}
+            >
               <span aria-hidden="true">🚀</span> Start Sending
             </button>
-            <button type="button" className={styles.btnSecondary} aria-label="Learn how it works">
+            <button
+              type="button"
+              className={styles.btnSecondary}
+              aria-label="Learn how it works"
+              onClick={handleScrollToHowItWorks}
+            >
               How It Works <span aria-hidden="true">→</span>
             </button>
           </div>
@@ -355,6 +379,7 @@ const LandingPage: React.FC = () => {
 
       {/* ═══════════ HOW IT WORKS ═══════════ */}
       <section
+        id="how-it-works"
         className={`${styles.howItWorks} ${styles.section}`}
         aria-label="How it works"
       >
@@ -415,7 +440,12 @@ const LandingPage: React.FC = () => {
             Start your first transfer in under a minute. No signups, no hidden fees — just the
             fastest path from A to B.
           </p>
-          <button type="button" className={styles.btnCta} aria-label="Connect wallet and start">
+          <button
+            type="button"
+            className={styles.btnCta}
+            aria-label="Connect wallet and start"
+            onClick={handleStartSending}
+          >
             <span aria-hidden="true">⚡</span> Connect Wallet &amp; Start
           </button>
         </div>
@@ -443,9 +473,19 @@ const LandingPage: React.FC = () => {
           <nav className={styles.footerColumn} aria-label="Site navigation">
             <h4>Links</h4>
             <ul className={styles.footerLinks}>
-              <li><a href="#hero">Home</a></li>
-              <li><a href="#dashboard">Dashboard</a></li>
-              <li><a href="#how-it-works">How It Works</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/dashboard">Dashboard</Link></li>
+              <li>
+                <a
+                  href="#how-it-works"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleScrollToHowItWorks();
+                  }}
+                >
+                  How It Works
+                </a>
+              </li>
               <li>
                 <a
                   href="https://github.com"

@@ -1,0 +1,133 @@
+/* ============================================================
+   Input — AnchorRoute UI Primitive
+   ============================================================ */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+  width: 100%;
+}
+
+/* ---- Label ---- */
+.label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+/* ---- Input Container ---- */
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--transition-default),
+    box-shadow var(--transition-default),
+    background var(--transition-default);
+}
+
+.inputContainer:hover:not(.isDisabled):not(.isError) {
+  border-color: var(--color-border-strong);
+}
+
+.inputContainer.isFocused:not(.isError) {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.inputContainer.isError {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.inputContainer.isDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--color-bg-secondary);
+}
+
+/* ---- Sizes ---- */
+.sizeSm .inputField {
+  height: 32px;
+  padding: 0 var(--space-3);
+  font-size: var(--text-xs);
+}
+.sizeSm .iconWrapper {
+  padding-left: var(--space-3);
+}
+
+.sizeMd .inputField {
+  height: 40px;
+  padding: 0 var(--space-4);
+  font-size: var(--text-sm);
+}
+.sizeMd .iconWrapper {
+  padding-left: var(--space-3);
+}
+
+.sizeLg .inputField {
+  height: 52px;
+  padding: 0 var(--space-5);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  text-align: center;
+  font-family: var(--font-mono);
+}
+.sizeLg .iconWrapper {
+  padding-left: var(--space-4);
+}
+
+/* ---- Native Input ---- */
+.inputField {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-text-primary);
+  width: 100%;
+  min-width: 0;
+}
+
+.inputField::placeholder {
+  color: var(--color-text-muted);
+}
+
+.inputField:disabled {
+  cursor: not-allowed;
+}
+
+/* ---- Icon ---- */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  font-size: 1.1em;
+  pointer-events: none;
+}
+
+.hasIcon .inputField {
+  padding-left: var(--space-1);
+}
+
+/* ---- Helper / Error Text ---- */
+.helperText {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+.errorText {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  line-height: var(--leading-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}

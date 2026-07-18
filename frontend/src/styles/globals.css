@@ -297,3 +297,21 @@ body {
 :focus:not(:focus-visible) {
   outline: none;
 }
+
+/* ============================================================
+   Chrome Extension Popup Viewport Constrains
+   ============================================================ */
+body.extension-popup {
+  width: 380px;
+  height: 600px;
+  min-width: 380px;
+  min-height: 600px;
+  max-width: 380px;
+  max-height: 600px;
+  overflow: auto;
+  font-size: var(--text-xs); /* snug text size for extension view */
+}
+
+body.extension-popup #root {
+  min-height: 100%;
+}

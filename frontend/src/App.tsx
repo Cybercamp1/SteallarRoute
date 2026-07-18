@@ -4,7 +4,7 @@
  */
 
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './components/layout/Header';
 import { LandingPage } from './features/landing';
 import { DashboardPage } from './features/dashboard';
@@ -41,7 +41,7 @@ function App() {
   }, [checkExistingConnection, checkFreighter]);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ToastProvider>
         <div className="app-wrapper">
           <Header />
@@ -69,7 +69,7 @@ function App() {
           </main>
         </div>
       </ToastProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

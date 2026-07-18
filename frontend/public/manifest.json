@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "AnchorRoute Wallet & Router",
+  "version": "1.0.0",
+  "description": "AI-Powered Cross-Border Remittance Router and Wallet for the Stellar Network.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "AnchorRoute Wallet",
+    "default_icon": {
+      "16": "favicon.svg",
+      "32": "favicon.svg",
+      "48": "favicon.svg",
+      "128": "favicon.svg"
+    }
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://horizon-testnet.stellar.org/*",
+    "https://horizon.stellar.org/*",
+    "https://friendbot.stellar.org/*",
+    "https://api.qrserver.com/*"
+  ]
+}

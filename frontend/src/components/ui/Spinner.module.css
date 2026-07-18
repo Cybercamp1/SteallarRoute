@@ -1,0 +1,44 @@
+/* ============================================================
+   Spinner — AnchorRoute UI Primitive
+   ============================================================ */
+
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgba(99, 102, 241, 0.2);
+  border-top-color: var(--color-primary);
+  animation: spinnerRotate 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ---- Sizes ---- */
+.sm {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+.md {
+  width: 24px;
+  height: 24px;
+  border-width: 2.5px;
+}
+
+.lg {
+  width: 40px;
+  height: 40px;
+  border-width: 3px;
+}
+
+.xl {
+  width: 64px;
+  height: 64px;
+  border-width: 4px;
+}
+
+@keyframes spinnerRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,62 @@
+/* ============================================================
+   Skeleton — AnchorRoute UI Primitive
+   ============================================================ */
+
+.skeleton {
+  display: block;
+  background: var(--color-surface-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.06) 40%,
+    rgba(99, 102, 241, 0.1) 50%,
+    rgba(99, 102, 241, 0.06) 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes skeletonShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ---- Variants ---- */
+.text {
+  height: 1em;
+  border-radius: var(--radius-sm);
+  width: 100%;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.rect {
+  border-radius: var(--radius-md);
+}
+
+.card {
+  border-radius: var(--radius-md);
+  border: var(--glass-border);
+}
+
+/* ---- Prefers reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after {
+    animation: none;
+  }
+}

@@ -60,6 +60,7 @@ export const TransferPage: React.FC = () => {
     findRoutes,
     selectRoute,
     executeTransfer,
+    establishTrustline,
     goToStep,
     reset,
   } = useTransferStore();
@@ -71,6 +72,7 @@ export const TransferPage: React.FC = () => {
   const [countdown, setCountdown] = useState(RATE_LOCK_SECONDS);
   const countdownRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [execSubStep, setExecSubStep] = useState(0); // 0: building, 1: signing, 2: submitting
+  const [isAddingTrustline, setIsAddingTrustline] = useState(false);
 
   const isConnected = walletStatus === 'connected' && !!publicKey;
 
@@ -128,6 +130,18 @@ export const TransferPage: React.FC = () => {
     if (!publicKey || !destAddress.trim()) return;
     await executeTransfer(publicKey, destAddress.trim());
   }, [publicKey, destAddress, executeTransfer]);
+
+  const handleAddTrustline = useCallback(async () => {
+    if (!publicKey || !selectedRoute) return;
+    setIsAddingTrustline(true);
+    const success = await establishTrustline(publicKey, selectedRoute.destAsset);
+    setIsAddingTrustline(false);
+    if (success) {
+      goToStep('confirming');
+    } else {
+      alert('Failed to establish trustline. Please make sure you have enough XLM in your wallet to cover the trustline reserve (0.5 XLM).');
+    }
+  }, [publicKey, selectedRoute, establishTrustline, goToStep]);
 
   const handleReset = useCallback(() => {
     setDestAddress('');
@@ -726,6 +740,26 @@ export const TransferPage: React.FC = () => {
           <span className={styles.failedReassurance}>
             ✅ No funds were sent
           </span>
+
+          {executionError?.toLowerCase().includes('trustline') && (
+            <div className={styles.trustlinePromo}>
+              <p className={styles.trustlinePromoText}>
+                {destAddress.trim() === publicKey ? 
+                  "Since this is a self-send, we can establish this trustline for you using your connected wallet." :
+                  "The recipient's wallet must opt-in to hold this asset first."}
+              </p>
+              {destAddress.trim() === publicKey && (
+                <button
+                  type="button"
+                  className={styles.addTrustlineBtn}
+                  disabled={isAddingTrustline}
+                  onClick={handleAddTrustline}
+                >
+                  {isAddingTrustline ? 'Adding Trustline...' : `Add Trustline for ${selectedRoute?.destAsset.code}`}
+                </button>
+              )}
+            </div>
+          )}
 
           <div className={styles.failedActions}>
             <button

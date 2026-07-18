@@ -411,6 +411,31 @@ export function getExplorerAccountUrl(publicKey: string): string {
 }
 
 /**
+ * Build a change trust transaction to add a trustline for an asset
+ */
+export async function buildChangeTrustTransaction(
+  publicKey: string,
+  asset: StellarAsset
+): Promise<StellarSdk.Transaction> {
+  const account = await server.loadAccount(publicKey);
+  const fee = await server.fetchBaseFee();
+
+  const tx = new StellarSdk.TransactionBuilder(account, {
+    fee: fee.toString(),
+    networkPassphrase: ACTIVE_NETWORK.networkPassphrase,
+  })
+    .addOperation(
+      StellarSdk.Operation.changeTrust({
+        asset: toSdkAsset(asset),
+      })
+    )
+    .setTimeout(30)
+    .build();
+
+  return tx;
+}
+
+/**
  * Truncate a Stellar public key for display
  */
 export function truncateKey(key: string, chars: number = 4): string {

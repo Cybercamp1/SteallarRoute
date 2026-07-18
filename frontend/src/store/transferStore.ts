@@ -7,7 +7,7 @@ import { create } from 'zustand';
 import type { TransferStep, TransferInput, TransferRecord } from '../types/transfer';
 import type { ScoredRoute } from '../types/route';
 import type { StellarAsset } from '../types/stellar';
-import { findPathsStrictSend, buildPathPaymentStrictSend, submitTransaction, toSdkAsset, loadAccount } from '../lib/stellar';
+import { findPathsStrictSend, buildPathPaymentStrictSend, submitTransaction, toSdkAsset, loadAccount, buildChangeTrustTransaction } from '../lib/stellar';
 import { scoreAndRankRoutes } from '../lib/scoring';
 import { signWithFreighter } from '../lib/freighter';
 import { KNOWN_ASSETS, APP_CONFIG } from '../lib/constants';
@@ -38,6 +38,7 @@ interface TransferState {
   findRoutes: () => Promise<void>;
   selectRoute: (route: ScoredRoute) => void;
   executeTransfer: (senderPublicKey: string, destPublicKey: string) => Promise<void>;
+  establishTrustline: (publicKey: string, asset: StellarAsset) => Promise<boolean>;
   goToStep: (step: TransferStep) => void;
   reset: () => void;
   addToHistory: (record: TransferRecord) => void;
@@ -263,6 +264,18 @@ export const useTransferStore = create<TransferState>()((set, get) => ({
           error instanceof Error ? error.message : 'Transfer failed. No funds were sent.',
         step: 'failed',
       });
+    }
+  },
+
+  establishTrustline: async (publicKey, asset) => {
+    try {
+      const tx = await buildChangeTrustTransaction(publicKey, asset);
+      const signedXdr = await signWithFreighter(tx.toXDR());
+      const result = await submitTransaction(signedXdr);
+      return result.successful;
+    } catch (error) {
+      console.error('Failed to establish trustline:', error);
+      return false;
     }
   },
 

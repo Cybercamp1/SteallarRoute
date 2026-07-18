@@ -1,0 +1,337 @@
+/* ============================================================
+   RouteCard — Scored route display card
+   ============================================================ */
+
+.card {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  cursor: pointer;
+  transition:
+    transform var(--transition-default),
+    border-color var(--transition-default),
+    box-shadow var(--transition-default);
+  animation: fadeInUp 300ms ease-out both;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardSelected {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow-primary);
+}
+
+.cardSelected:hover {
+  border-color: var(--color-primary-hover);
+}
+
+/* ---- Header row: tags + score ---- */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-2xl);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-none);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tagIcon {
+  font-size: 0.85em;
+}
+
+/* ---- Circular score indicator ---- */
+.scoreWrapper {
+  flex-shrink: 0;
+  position: relative;
+  width: 56px;
+  height: 56px;
+}
+
+.scoreRing {
+  width: 56px;
+  height: 56px;
+  transform: rotate(-90deg);
+}
+
+.scoreRingBg {
+  fill: none;
+  stroke: var(--color-surface-3);
+  stroke-width: 4;
+}
+
+.scoreRingFg {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 600ms ease-out;
+}
+
+.scoreValue {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+/* ---- Route path visualization ---- */
+.pathSection {
+  margin-bottom: var(--space-4);
+}
+
+.pathRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.pathNode {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-2xl);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.pathNodeIcon {
+  font-size: var(--text-base);
+}
+
+.pathArrow {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  flex-shrink: 0;
+}
+
+/* ---- Metrics row ---- */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+}
+
+.metricLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.metricValue {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+}
+
+/* ---- Fee breakdown (collapsible) ---- */
+.feeToggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  width: 100%;
+  padding: var(--space-2) 0;
+  border: none;
+  background: none;
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.feeToggle:hover {
+  color: var(--color-primary-hover);
+}
+
+.feeChevron {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--transition-default);
+}
+
+.feeChevronOpen {
+  transform: rotate(180deg);
+}
+
+.feeBreakdown {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 300ms ease-out,
+    opacity 200ms ease-out;
+}
+
+.feeBreakdownOpen {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.feeTable {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+  padding: var(--space-2) 0 var(--space-3);
+}
+
+.feeRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-xs);
+}
+
+.feeRowLabel {
+  color: var(--color-text-muted);
+}
+
+.feeRowValue {
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+}
+
+.feeRowTotal {
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: var(--space-1-5);
+  margin-top: var(--space-1);
+}
+
+.feeRowTotal .feeRowLabel,
+.feeRowTotal .feeRowValue {
+  color: var(--color-text-primary);
+  font-weight: var(--font-semibold);
+}
+
+/* ---- Actions ---- */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.selectBtn {
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--gradient-primary);
+  color: white;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  border: none;
+  cursor: pointer;
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.selectBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.selectBtn:active {
+  transform: translateY(0);
+}
+
+.selectedLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  color: var(--color-success);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+}
+
+.selectedCheck {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---- Animations ---- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .card {
+    padding: var(--space-4);
+  }
+
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .scoreWrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .scoreRing {
+    width: 48px;
+    height: 48px;
+  }
+
+  .scoreValue {
+    font-size: var(--text-xs);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+  }
+}

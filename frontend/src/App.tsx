@@ -18,14 +18,8 @@ import './styles/globals.css';
 import './styles/animations.css';
 import './styles/utilities.css';
 
-// Lazy load transfer page (heavy component)
-import { lazy, Suspense } from 'react';
-const TransferPage = lazy(() =>
-  import('./features/transfer/TransferPage').then((mod) => ({ default: mod.TransferPage }))
-);
-const WalletPage = lazy(() =>
-  import('./features/wallet/WalletPage').then((mod) => ({ default: mod.WalletPage }))
-);
+import { TransferPage } from './features/transfer';
+import { WalletPage } from './features/wallet';
 
 function App() {
   const { checkExistingConnection, checkFreighter } = useWalletStore();
@@ -48,22 +42,8 @@ function App() {
           <main className="main-content">
             <Routes>
               <Route path="/" element={<LandingPage />} />
-              <Route
-                path="/send"
-                element={
-                  <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh', color: 'var(--color-text-secondary, #94a3b8)' }}>Loading...</div>}>
-                    <TransferPage />
-                  </Suspense>
-                }
-              />
-              <Route
-                path="/wallet"
-                element={
-                  <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh', color: 'var(--color-text-secondary, #94a3b8)' }}>Loading...</div>}>
-                    <WalletPage />
-                  </Suspense>
-                }
-              />
+              <Route path="/send" element={<TransferPage />} />
+              <Route path="/wallet" element={<WalletPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
             </Routes>
           </main>

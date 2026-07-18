@@ -279,6 +279,35 @@ export async function buildPathPaymentStrictReceive(
 }
 
 /**
+ * Build a standard payment transaction (single asset transfer)
+ */
+export async function buildSimplePayment(
+  senderPublicKey: string,
+  destPublicKey: string,
+  asset: StellarAsset,
+  amount: string
+): Promise<StellarSdk.Transaction> {
+  const account = await server.loadAccount(senderPublicKey);
+  const fee = await server.fetchBaseFee();
+
+  const tx = new StellarSdk.TransactionBuilder(account, {
+    fee: fee.toString(),
+    networkPassphrase: ACTIVE_NETWORK.networkPassphrase,
+  })
+    .addOperation(
+      StellarSdk.Operation.payment({
+        destination: destPublicKey,
+        asset: toSdkAsset(asset),
+        amount,
+      })
+    )
+    .setTimeout(30)
+    .build();
+
+  return tx;
+}
+
+/**
  * Submit a signed transaction to the network
  */
 export async function submitTransaction(

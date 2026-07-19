@@ -198,3 +198,7 @@ To fulfill the requirements of user growth scaling, product feedback iterations,
 ### 4. Ecosystem Pitch Presentation (Startup Pitch & Storytelling)
 - **Feature:** Crafted a comprehensive 10-slide outline explaining the business model, unit economics, tech architecture, and roadmap.
 - **Asset Link:** [pitch_deck.md](docs/pitch_deck.md)
+
+### 5. Demo Video Walkthrough
+- **Feature:** Recorded and uploaded a 2-minute visual walkthrough of the dApp.
+- **Video Link:** [YouTube Demo Video](https://youtu.be/_9cvWzDzZOA)

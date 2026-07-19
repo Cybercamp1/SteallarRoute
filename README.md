@@ -4,8 +4,11 @@
 
 [![Built on Stellar](https://img.shields.io/badge/Built%20on-Stellar-blue)](https://stellar.org)
 [![Smart Contracts](https://img.shields.io/badge/Smart%20Contracts-Soroban-orange)](https://soroban.stellar.org)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-emerald)](https://stellarroute.netlify.app/)
 
 ## 🚀 Overview
+
+**Live dApp URL:** [https://stellarroute.netlify.app/](https://stellarroute.netlify.app/)
 
 AnchorRoute scans Stellar's anchor network in real-time to find the cheapest, fastest payment path for cross-border remittance. Users simply enter an amount and currency pair, and our AI scoring engine ranks all available routes by cost, speed, liquidity, and community reliability ratings.
 

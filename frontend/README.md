@@ -1,32 +1,41 @@
-# React + TypeScript + Vite
+# AnchorRoute Frontend Client 🌐
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> AI-Powered Cross-Border Remittance Router and Wallet popup client.
 
-Currently, two official plugins are available:
+**Live dApp URL:** [https://stellarroute.netlify.app/](https://stellarroute.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This directory houses the React + TypeScript + Vite frontend client for AnchorRoute. The app is fully responsive, optimized for both desktop web layout and Chrome Extension popup viewport formats.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Getting Started
 
-## Expanding the Oxlint configuration
+### Prerequisites
+- Node.js 18+
+- [Freighter Wallet](https://freighter.app) browser extension for testnet signing
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+### Development Server
+Run the local dev server:
+```bash
+npm install
+npm run dev
 ```
+Open **[http://localhost:5173/](http://localhost:5173/)** to view the app.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### Production Build
+Build the optimized production assets:
+```bash
+npm run build
+```
+The output will be compiled into the `dist/` directory.
+
+---
+
+## 👛 Chrome Extension Deployment
+
+The production build folder contains a `manifest.json` file. To run this app as a native browser extension popup:
+1. Open Google Chrome.
+2. Navigate to `chrome://extensions/`.
+3. Toggle **Developer mode** to **On** (top-right).
+4. Click **Load unpacked** (top-left) and select the `frontend/dist/` directory.
+5. Pin the extension and click the popup icon in your browser toolbar!

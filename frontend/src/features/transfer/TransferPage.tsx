@@ -21,6 +21,7 @@ import { ROUTE_TAG_DISPLAY } from '../../types/route';
 import { Select } from '../../components/ui';
 import { Button } from '../../components/ui';
 import { RouteCard } from './RouteCard';
+import { RouteDetailsModal } from './RouteDetailsModal';
 import type { SelectOption } from '../../components/ui';
 import styles from './TransferPage.module.css';
 
@@ -45,6 +46,9 @@ const ASSET_OPTIONS: SelectOption[] = KNOWN_ASSETS.map((a) => ({
    ================================================================ */
 
 export const TransferPage: React.FC = () => {
+  // ---- Local state ----
+  const [detailsRoute, setDetailsRoute] = useState<any | null>(null);
+
   // ---- Stores ----
   const {
     step,
@@ -357,48 +361,57 @@ export const TransferPage: React.FC = () => {
   // =====================================================================
   if (step === 'routes') {
     return (
-      <div className={styles.page}>
-        <div className={`${styles.stepContainer}`} key="routes">
-          <div className={styles.routesHeader}>
-            <h2 className={styles.routesTitle}>Available Routes</h2>
-            <span className={styles.routesCount}>
-              {routes.length} route{routes.length !== 1 ? 's' : ''} found
-            </span>
-          </div>
+      <>
+        <div className={styles.page}>
+          <div className={`${styles.stepContainer}`} key="routes">
+            <div className={styles.routesHeader}>
+              <h2 className={styles.routesTitle}>Available Routes</h2>
+              <span className={styles.routesCount}>
+                {routes.length} route{routes.length !== 1 ? 's' : ''} found
+              </span>
+            </div>
 
-          <div className={styles.routesList}>
-            {routes.map((route, idx) => (
-              <RouteCard
-                key={route.id}
-                route={route}
-                onSelect={selectRoute}
-                isSelected={selectedRoute?.id === route.id}
-                animationDelay={idx * 80}
-              />
-            ))}
-          </div>
+            <div className={styles.routesList}>
+              {routes.map((route, idx) => (
+                <RouteCard
+                  key={route.id}
+                  route={route}
+                  onSelect={selectRoute}
+                  isSelected={selectedRoute?.id === route.id}
+                  animationDelay={idx * 80}
+                  onShowDetails={(r) => setDetailsRoute(r)}
+                />
+              ))}
+            </div>
 
-          <button
-            type="button"
-            className={styles.backBtn}
-            onClick={() => goToStep('input')}
-          >
-            <svg
-              className={styles.backArrow}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
+            <button
+              type="button"
+              className={styles.backBtn}
+              onClick={() => goToStep('input')}
             >
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-            Back
-          </button>
+              <svg
+                className={styles.backArrow}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+              Back
+            </button>
+          </div>
         </div>
-      </div>
+
+        <RouteDetailsModal
+          isOpen={detailsRoute !== null}
+          onClose={() => setDetailsRoute(null)}
+          route={detailsRoute}
+        />
+      </>
     );
   }
 

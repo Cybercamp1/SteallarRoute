@@ -1,0 +1,126 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0.5rem;
+}
+
+.scoreHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.radialProgress {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  background: var(--color-primary-muted);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  align-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  padding-left: 2px;
+}
+
+.scoreNumber {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary-hover);
+}
+
+.scoreLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin-left: 2px;
+}
+
+.recommendationText h4 {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.recommendationText p {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.factorsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.factorCard {
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.factorName {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.factorValue {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+.pathVisualizer {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.pathVisualizer h5 {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.hopsFlow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.25rem 0;
+}
+
+.hopNode {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 1rem;
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.hopArrow {
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+}
+
+.actions {
+  margin-top: 0.5rem;
+}

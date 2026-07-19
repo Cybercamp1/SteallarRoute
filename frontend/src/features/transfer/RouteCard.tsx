@@ -24,6 +24,8 @@ export interface RouteCardProps {
   isSelected?: boolean;
   /** Stagger animation delay in ms */
   animationDelay?: number;
+  /** Callback to show route details report */
+  onShowDetails?: (route: ScoredRoute) => void;
 }
 
 /* ================================================================
@@ -104,6 +106,7 @@ export const RouteCard: React.FC<RouteCardProps> = ({
   onSelect,
   isSelected = false,
   animationDelay = 0,
+  onShowDetails,
 }) => {
   const [feeOpen, setFeeOpen] = useState(false);
 
@@ -253,6 +256,16 @@ export const RouteCard: React.FC<RouteCardProps> = ({
 
       {/* ---- Actions ---- */}
       <div className={styles.actions}>
+        <button
+          type="button"
+          className={styles.aiInsightsBtn}
+          onClick={(e) => {
+            e.stopPropagation();
+            onShowDetails?.(route);
+          }}
+        >
+          💡 AI Insights
+        </button>
         {isSelected ? (
           <span className={styles.selectedLabel}>
             <svg

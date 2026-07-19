@@ -20,6 +20,7 @@ import './styles/utilities.css';
 
 import { TransferPage } from './features/transfer';
 import { WalletPage } from './features/wallet';
+import { ReferralDashboard } from './features/referral';
 
 function App() {
   const { checkExistingConnection, checkFreighter } = useWalletStore();
@@ -44,6 +45,7 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/send" element={<TransferPage />} />
               <Route path="/wallet" element={<WalletPage />} />
+              <Route path="/referral" element={<ReferralDashboard />} />
               <Route path="/dashboard" element={<DashboardPage />} />
             </Routes>
           </main>

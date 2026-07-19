@@ -50,7 +50,7 @@ Path payments + the anchor network are Stellar's actual moat — no other chain 
 | **Frontend** | React 18 + TypeScript + Vite |
 | **Styling** | Vanilla CSS (CSS Modules) |
 | **Blockchain** | Stellar SDK, Freighter Wallet |
-| **Smart Contract** | Soroban (Rust) on Stellar Testnet |
+| **Smart Contract** | Soroban (Rust) on Stellar Testnet ([`CDW3LGL5L3G...`](https://stellar.expert/explorer/testnet/contract/CDW3LGL5L3G737V4DHYF64AECZMXG45MHTKDRN5YGLQ24RCRB64QZMXG)) |
 | **State** | Zustand |
 | **Analytics** | PostHog |
 | **Monitoring** | Sentry |

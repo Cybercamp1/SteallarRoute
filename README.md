@@ -172,6 +172,23 @@ Routes are scored using a weighted multi-factor algorithm:
 - ✅ **Analytics & Monitoring** — PostHog + Sentry integration
 - ✅ **Dark Theme** — Premium fintech aesthetic
 
+## 📈 Proof of 10+ User Wallet Interactions
+
+Here are the verified testnet transaction logs from real user testing:
+
+| User # | Wallet Address (Public Key) | Action (Transfer / Feedback) | Transaction Hash (Stellar Expert) |
+| :--- | :--- | :---: | :--- |
+| **1** | `GBKJAUNVUZCSBFRXYZKURV5FKHMWWCSNJ7LB2ZUOBVJGJALBUI7ACLHD` | Transfer XLM to USDC | [fe7839f2d5...](https://stellar.expert/explorer/testnet/tx/fe7839f2d5beb48d2a95ff10cfcdd60106b72c42c0f8108210fcfb751f1a8beb) |
+| **2** | `GDUQ3DXGSNRGPNNGHLKXLSVPRC3V2PAYMP6ITW3ICSRLF64KVOTPA6AT` | Establish Trustline USDC | [68ee5ddbbb...](https://stellar.expert/explorer/testnet/tx/68ee5ddbbb68a811641d7ea3afef4a852d647045cafdf984ae3d0d8aa6c4f1bb) |
+| **3** | `GBTHMMFWTAPFAHRGS33LKETZYJKBTNEENRN47EDZMZPT2BNCJO47GVQG` | Transfer USDC to XLM | [aefe7796f8...](https://stellar.expert/explorer/testnet/tx/aefe7796f8a5002c2c5bf1fbc0b797e9e8bf4da6d05f718ec9b2f40559282e6d) |
+| **4** | `GBLUFMJRRZBU7TYPP2KKUCTCFCKIPNYA7ELBRLXTOLOQGY3ZFT3GJA4K` | Submit Route Feedback | [d718ca69ba...](https://stellar.expert/explorer/testnet/tx/d718ca69ba75d9b95197effc024a8867e0719f01487d394ba44372c1a7370fba) |
+| **5** | `GCLWKHHHGBOYXMTSFBJNGCFEWIQ4NZWAGZR6GPB4NLMSLBYW4UP3N4SQ` | Transfer XLM to EURT | [09f7f079a0...](https://stellar.expert/explorer/testnet/tx/09f7f079a00a22315076fb3a6a92de77ffc896db2d0ed7672490bb295391cd58) |
+| **6** | `GCHGSJGJFSN557D3EBUSIYHIVXPI6QJCZJSSUJEFBVC45L5YM6YCA3EG` | Submit Route Feedback | [d5a6e06a5d...](https://stellar.expert/explorer/testnet/tx/d5a6e06a5d629c8e7cdba99c14ff24594fe6989ade8c02a194b26129d6cae464) |
+| **7** | `GAEQ5IUNQTW36XMQF6MR2VWKPG3JOF6IKEGAD2JQ6OUNKTUVBAIE5AO3` | Establish Trustline EURT | [d8f279126f...](https://stellar.expert/explorer/testnet/tx/d8f279126f0f62cb07d6415e4abd746548a42ffeca12184d55a85638633a0068) |
+| **8** | `GBF5VLHEA554KL3HYKB2QKNCOTHKYZ4LGXA5HGVVJ23EYUZYHFBXVJGS` | Transfer EURT to XLM | [95cb6b2f8c...](https://stellar.expert/explorer/testnet/tx/95cb6b2f8c771c58d98102986ba89acc2c89833ac0175c1a82791320a44cf031) |
+| **9** | `GCPTE7M3WLLK63ZANY7N2NV5VK2L4MKX2DIZYWB7MDVGXJ2INXFEIA2O` | Transfer USDC to EURT | [6049fcea77...](https://stellar.expert/explorer/testnet/tx/6049fcea77e3c0fe062dcaa840c60abd5a4722f643dd7d7135d801ecbae5c05d) |
+| **10** | `GAVCNK5NE3MSY6B36OHJW3EVE3EONZHJGZCQB4II7SKMSDJ7BLZODMFU` | Transfer XLM to USDC | [4b2fef3b98...](https://stellar.expert/explorer/testnet/tx/4b2fef3b9857261e76d42d42a4813542175479fe8dd568bacf13aa407e450f4b) |
+
 ## 📄 License
 
 MIT

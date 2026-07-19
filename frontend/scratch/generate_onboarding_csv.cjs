@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-// Generate 50 realistic entries
-const firstNames = ['John', 'Emily', 'Michael', 'Sarah', 'David', 'Jessica', 'James', 'Ashley', 'Robert', 'Amanda', 'William', 'Sophia', 'Joseph', 'Olivia', 'Daniel', 'Isabella', 'Thomas', 'Mia', 'Charles', 'Charlotte'];
-const lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez', 'Hernandez', 'Lopez', 'Gonzalez', 'Wilson', 'Anderson', 'Thomas', 'Taylor', 'Moore', 'Jackson', 'Martin'];
+// Generate 50 realistic entries with Indian names
+const firstNames = ['Aarav', 'Vihaan', 'Amit', 'Rajesh', 'Priya', 'Neha', 'Deepika', 'Arjun', 'Ananya', 'Vikram', 'Sanjay', 'Karan', 'Aditya', 'Rohan', 'Kavita', 'Suresh', 'Divya', 'Pooja', 'Sunita', 'Rahul', 'Ishaan', 'Aniket', 'Sai', 'Kiran', 'Jyoti'];
+const lastNames = ['Sharma', 'Patel', 'Verma', 'Gupta', 'Nair', 'Joshi', 'Rao', 'Singh', 'Reddy', 'Kumar', 'Choudhury', 'Mehta', 'Mishra', 'Prasad', 'Das', 'Sen', 'Banerjee', 'Iyer', 'Pillai', 'Rani', 'Gowda', 'Naidu', 'Menon', 'Bhatt', 'Saxena'];
 const corridors = ['XLM to USDC', 'XLM to EURT', 'USDC to XLM', 'EURT to XLM', 'USDC to EURT'];
 const reviews = [
   "Incredibly fast pathfinding. I saved 0.5 XLM on my transfer compared to manual rates.",

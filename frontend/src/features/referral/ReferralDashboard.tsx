@@ -127,21 +127,45 @@ export const ReferralDashboard: React.FC = () => {
                 {address ? (
                   <>
                     <tr>
-                      <td className={styles.mono}>GBKJA...CLHD</td>
+                      <td className={styles.mono}>
+                        <a
+                          href="https://stellar.expert/explorer/testnet/account/GBKJAUNVUZCSBFRXYZKURV5FKHMWWCSNJ7LB2ZUOBVJGJALBUI7ACLHD"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          GBKJA...CLHD
+                        </a>
+                      </td>
                       <td>Testnet</td>
                       <td>2026-07-16</td>
                       <td>$1,250.00</td>
                       <td><span className={styles.statusActive}>Active</span></td>
                     </tr>
                     <tr>
-                      <td className={styles.mono}>GDUQ3...64KV</td>
+                      <td className={styles.mono}>
+                        <a
+                          href="https://stellar.expert/explorer/testnet/account/GDUQ3DXGSNRGPNNGHLKXLSVPRC3V2PAYMP6ITW3ICSRLF64KVOTPA6AT"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          GDUQ3...64KV
+                        </a>
+                      </td>
                       <td>Testnet</td>
                       <td>2026-07-17</td>
                       <td>$800.00</td>
                       <td><span className={styles.statusActive}>Active</span></td>
                     </tr>
                     <tr>
-                      <td className={styles.mono}>GBTHM...CJO4</td>
+                      <td className={styles.mono}>
+                        <a
+                          href="https://stellar.expert/explorer/testnet/account/GBTHMMFWTAPFAHRGS33LKETZYJKBTNEENRN47EDZMZPT2BNCJO47GVQG"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          GBTHM...CJO4
+                        </a>
+                      </td>
                       <td>Testnet</td>
                       <td>2026-07-18</td>
                       <td>$2,800.00</td>

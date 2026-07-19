@@ -223,6 +223,15 @@
   font-family: var(--font-mono);
 }
 
+.mono a {
+  color: var(--color-primary-hover);
+  text-decoration: none;
+}
+
+.mono a:hover {
+  text-decoration: underline;
+}
+
 .statusActive {
   background: var(--color-success-muted);
   color: var(--color-success-hover);

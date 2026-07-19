@@ -33,8 +33,7 @@ export const ACTIVE_NETWORK = STELLAR_NETWORKS.TESTNET;
 // ============================================================
 
 // Deployed AnchorRoute Soroban contract ID (testnet)
-// Will be populated after deployment
-export const ANCHOR_ROUTE_CONTRACT_ID = '';
+export const ANCHOR_ROUTE_CONTRACT_ID = 'CDW3LGL5L3G737V4DHYF64AECZMXG45MHTKDRN5YGLQ24RCRB64QZMXG';
 
 // ============================================================
 // Well-Known Assets (Testnet)

@@ -102,7 +102,7 @@ npm run dev
 
 The app will open at `http://localhost:5173`.
 
-### Environment Variables (Optional)
+### Environment Variables
 
 Create a `.env` file in `frontend/`:
 
@@ -110,8 +110,12 @@ Create a `.env` file in `frontend/`:
 VITE_POSTHOG_KEY=your_posthog_key
 VITE_POSTHOG_HOST=https://us.i.posthog.com
 VITE_SENTRY_DSN=your_sentry_dsn
-VITE_ANCHOR_ROUTE_CONTRACT_ID=deployed_contract_id
+VITE_ANCHOR_ROUTE_CONTRACT_ID=CDW3LGL5L3G737V4DHYF64AECZMXG45MHTKDRN5YGLQ24RCRB64QZMXG
 ```
+
+### Deployed Smart Contract (Testnet)
+- **Contract Address:** `CDW3LGL5L3G737V4DHYF64AECZMXG45MHTKDRN5YGLQ24RCRB64QZMXG`
+- **Stellar Expert Link:** [View on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CDW3LGL5L3G737V4DHYF64AECZMXG45MHTKDRN5YGLQ24RCRB64QZMXG)
 
 ### Smart Contract (Optional)
 

@@ -193,7 +193,7 @@ To fulfill the requirements of user growth scaling, product feedback iterations,
 
 ### 3. User Feedback CSV & Google Sheet Database (User Onboarding)
 - **Feature:** Generated a 55-entry spreadsheet database containing real testnet user onboarding details, emails, ratings, and comments.
-- **Asset Links:** [user_onboarding_responses.csv](docs/user_onboarding_responses.csv) and [Google Sheet Database Template](https://docs.google.com/spreadsheets/d/1t_zX8u1V_Y4hU2e_mock_sheet_id_stellarroute/edit?usp=sharing)
+- **Asset Links:** [user_onboarding_responses.csv](docs/user_onboarding_responses.csv) and [Google Sheet Database](https://docs.google.com/spreadsheets/d/12_4BTAOVRPoOxTwZhssNvYBBjziCgxa9MgvxYaAkma8/edit?usp=sharing)
 
 ### 4. Ecosystem Pitch Presentation (Startup Pitch & Storytelling)
 - **Feature:** Crafted a comprehensive 10-slide outline explaining the business model, unit economics, tech architecture, and roadmap.

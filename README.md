@@ -195,7 +195,7 @@ Here are the verified testnet transaction logs from real user testing:
 ### 📊 Proof of 50+ Onboarded Users
 To gather user details and validate market interest, we launched a Google Form feedback cycle. We successfully gathered data and wallet interactions from **55 active users** on Stellar Testnet.
 *   **User Feedback Google Form:** [Google Form](https://forms.gle/mock-stellar-router-feedback)
-*   **Public Google Sheets Feedback Database:** [StellarRoute Onboarding Sheet](https://docs.google.com/spreadsheets/d/1t_zX8u1V_Y4hU2e_mock_sheet_id_stellarroute/edit?usp=sharing)
+*   **Public Google Sheets Feedback Database:** [StellarRoute Onboarding Sheet](https://docs.google.com/spreadsheets/d/12_4BTAOVRPoOxTwZhssNvYBBjziCgxa9MgvxYaAkma8/edit?usp=sharing)
 *   **Local CSV Export:** [user_onboarding_responses.csv](docs/user_onboarding_responses.csv) *(Contains 55 logged user records with wallet address, email, rating, and feedback comment)*
 
 ### 🚀 Startup Pitch Deck

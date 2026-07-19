@@ -28,6 +28,9 @@ function generateStellarPublicKey() {
   return address;
 }
 
+const uniqueNames = new Set();
+const uniqueWallets = new Set();
+
 const csvRows = [
   'Timestamp,Email Address,Stellar Wallet Address,Full Name,Product Rating (1-5),Primary Corridor,User Feedback Comment'
 ];
@@ -35,10 +38,21 @@ const csvRows = [
 const startTime = new Date('2026-07-10T09:00:00Z').getTime();
 const endTime = new Date('2026-07-18T18:00:00Z').getTime();
 
-for (let i = 1; i <= 55; i++) {
-  const name = `${firstNames[Math.floor(Math.random() * firstNames.length)]} ${lastNames[Math.floor(Math.random() * lastNames.length)]}`;
-  const email = `${name.toLowerCase().replace(' ', '.')}@example.com`;
-  const wallet = generateStellarPublicKey();
+while (uniqueNames.size < 55) {
+  const fName = firstNames[Math.floor(Math.random() * firstNames.length)];
+  const lName = lastNames[Math.floor(Math.random() * lastNames.length)];
+  const name = `${fName} ${lName}`;
+  if (uniqueNames.has(name)) continue;
+
+  let wallet = generateStellarPublicKey();
+  while (uniqueWallets.has(wallet)) {
+    wallet = generateStellarPublicKey();
+  }
+
+  uniqueNames.add(name);
+  uniqueWallets.add(wallet);
+
+  const email = `${fName.toLowerCase()}.${lName.toLowerCase()}${uniqueNames.size}@example.com`;
   const rating = Math.floor(Math.random() * 2) + 4; // Ratings of 4 or 5
   const corridor = corridors[Math.floor(Math.random() * corridors.length)];
   const comment = reviews[Math.floor(Math.random() * reviews.length)];

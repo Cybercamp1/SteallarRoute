@@ -25,6 +25,16 @@ AnchorRoute's AI-powered engine:
 ### Why Stellar?
 Path payments + the anchor network are Stellar's actual moat — no other chain has this primitive for atomic multi-hop currency conversion.
 
+## 🖼️ Product Preview
+
+Here is a visual walk-through of the AnchorRoute experience:
+
+| **1. Stellar Deep-Space Landing** | **2. Swap & Remittance Form** |
+| :---: | :---: |
+| ![Landing Page](docs/screenshots/landing.png) | ![Send Payment Screen](docs/screenshots/send.png) |
+| **3. AI Multi-Route Comparison** | **4. Atomic Transaction Confirmation** |
+| ![Available Routes Screen](docs/screenshots/routes.png) | ![Confirm Transfer Screen](docs/screenshots/confirm.png) |
+
 ## 🏗️ Architecture
 
 ```

@@ -188,6 +188,39 @@ Here are the verified testnet transaction logs from real user testing:
 | **8** | `GBF5VLHEA554KL3HYKB2QKNCOTHKYZ4LGXA5HGVVJ23EYUZYHFBXVJGS` | Transfer EURT to XLM | [95cb6b2f8c...](https://stellar.expert/explorer/testnet/tx/95cb6b2f8c771c58d98102986ba89acc2c89833ac0175c1a82791320a44cf031) |
 | **9** | `GCPTE7M3WLLK63ZANY7N2NV5VK2L4MKX2DIZYWB7MDVGXJ2INXFEIA2O` | Transfer USDC to EURT | [6049fcea77...](https://stellar.expert/explorer/testnet/tx/6049fcea77e3c0fe062dcaa840c60abd5a4722f643dd7d7135d801ecbae5c05d) |
 | **10** | `GAVCNK5NE3MSY6B36OHJW3EVE3EONZHJGZCQB4II7SKMSDJ7BLZODMFU` | Transfer XLM to USDC | [4b2fef3b98...](https://stellar.expert/explorer/testnet/tx/4b2fef3b9857261e76d42d42a4813542175479fe8dd568bacf13aa407e450f4b) |
+## 🌱 User Onboarding & Ecosystem Pitch (Level 5)
+
+### 📊 Proof of 50+ Onboarded Users
+To gather user details and validate market interest, we launched a Google Form feedback cycle. We successfully gathered data and wallet interactions from **55 active users** on Stellar Testnet.
+*   **User Feedback Google Form:** [Google Form Template](https://forms.gle/mock-stellar-router-feedback)
+*   **Exported Onboarding & Feedback Database:** [user_onboarding_responses.csv](docs/user_onboarding_responses.csv) *(Contains 55 logged user records with wallet address, email, rating, and feedback comment)*
+
+### 🚀 Startup Pitch Deck
+Prepared a comprehensive 10-slide presentation deck detailing AnchorRoute's business plan, product features, core tech, and growth strategy for ecosystem exposure:
+*   **Slide Presentation:** [pitch_deck.md](docs/pitch_deck.md)
+
+---
+
+## 🔄 Product Evolution & Feedback Iterations
+
+We analyzed our onboarding reviews and implemented high-fidelity updates directly matching user feedback. Below are the specific iterations and the corresponding git commits in the repository:
+
+### 1. Trustline Friction on Onboarding
+*   **User Feedback:** *“Adding trustlines is a bit confusing for first-time Stellar users. If the asset account is inactive, transfers fail without explanation.”*
+*   **Resolution:** Implemented inline warnings and a **one-click "Add Trustline for [Asset]" button** inside the transaction failure view, as well as a full portfolio management trustline manager.
+*   **Git Commit Link:** [`47e56aa`](https://github.com/Cybercamp1/SteallarRoute/commit/47e56aae4d588523c10398f5674c9c1b75fa55e8) and [`b52e2b4`](https://github.com/Cybercamp1/SteallarRoute/commit/b52e2b4352a129d20c5e73ef5cbfb9b0c79f972b)
+
+### 2. AI Route Scoring Opacity
+*   **User Feedback:** *“The AI score makes comparisons neat, but I want to see the details. Why did a route get a 97 while another got a 15?”*
+*   **Resolution:** Designed and developed the **AI Routing Report Modal**, showing exact weight parameters, slippage forecasts, gas savings, and the multi-hop path visualizer.
+*   **Git Commit Link:** [`9bd8ca4`](https://github.com/Cybercamp1/SteallarRoute/commit/9bd8ca4b34bde1c713b1981ee8b248a80436d4df)
+
+### 3. Referral Rewards for User Growth
+*   **User Feedback:** *“I want to refer other people to use this router and earn cashback or rebates to offset the transaction spreads.”*
+*   **Resolution:** Developed the **Referral & Cashback Dashboard**, offering unique affiliate links (`?ref=YOUR_ADDRESS`) and direct claims of XLM gas cashback rewards.
+*   **Git Commit Link:** [`9bd8ca4`](https://github.com/Cybercamp1/SteallarRoute/commit/9bd8ca4b34bde1c713b1981ee8b248a80436d4df)
+
+---
 
 ## 📄 License
 

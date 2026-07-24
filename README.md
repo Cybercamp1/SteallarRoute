@@ -192,11 +192,10 @@ Here are the verified testnet transaction logs from real user testing:
 | **10** | [`GAVCNK5NE...`](https://stellar.expert/explorer/testnet/account/GAVCNK5NE3MSY6B36OHJW3EVE3EONZHJGZCQB4II7SKMSDJ7BLZODMFU) | Transfer XLM to USDC | [4b2fef3b98...](https://stellar.expert/explorer/testnet/tx/4b2fef3b9857261e76d42d42a4813542175479fe8dd568bacf13aa407e450f4b) |
 ## 🌱 User Onboarding & Ecosystem Pitch (Level 5)
 
-### 📊 Proof of 50+ Onboarded Users
-To gather user details and validate market interest, we launched a Google Form feedback cycle. We successfully gathered data and wallet interactions from **55 active users** on Stellar Testnet.
-*   **User Feedback Google Form:** [Google Form](https://forms.gle/mock-stellar-router-feedback)
-*   **Public Google Sheets Feedback Database:** [StellarRoute Onboarding Sheet](https://docs.google.com/spreadsheets/d/12_4BTAOVRPoOxTwZhssNvYBBjziCgxa9MgvxYaAkma8/edit?usp=sharing)
-*   **Local CSV Export:** [user_onboarding_responses.csv](docs/user_onboarding_responses.csv) *(Contains 55 logged user records with wallet address, email, rating, and feedback comment)*
+### 📊 Proof of User Onboarding
+To gather real user feedback and validate market interest, we created a Google Form and shared it with real users on the Stellar Testnet.
+*   **User Feedback Google Form:** *(Real form link — coming soon as responses are collected)*
+*   **Public Google Sheets Feedback Database:** *(Will be linked once real responses are submitted)*
 
 ### 🚀 Startup Pitch Deck
 Prepared a comprehensive 10-slide presentation deck detailing AnchorRoute's business plan, product features, core tech, and growth strategy for ecosystem exposure:
@@ -206,20 +205,20 @@ Prepared a comprehensive 10-slide presentation deck detailing AnchorRoute's busi
 
 ## 🔄 Product Evolution & Feedback Iterations
 
-We analyzed our onboarding reviews and implemented high-fidelity updates directly matching user feedback. Below are the specific iterations and the corresponding git commits in the repository:
+Based on known pain points in the Stellar ecosystem and early beta testing feedback, we implemented the following product improvements:
 
 ### 1. Trustline Friction on Onboarding
-*   **User Feedback:** *“Adding trustlines is a bit confusing for first-time Stellar users. If the asset account is inactive, transfers fail without explanation.”*
+*   **Pain Point:** First-time Stellar users often face failed transfers because the destination asset account (USDC, EURT) has no active trustline, with no clear explanation of the error.
 *   **Resolution:** Implemented inline warnings and a **one-click "Add Trustline for [Asset]" button** inside the transaction failure view, as well as a full portfolio management trustline manager.
 *   **Git Commit Link:** [`47e56aa`](https://github.com/Cybercamp1/SteallarRoute/commit/47e56aae4d588523c10398f5674c9c1b75fa55e8) and [`b52e2b4`](https://github.com/Cybercamp1/SteallarRoute/commit/b52e2b4352a129d20c5e73ef5cbfb9b0c79f972b)
 
 ### 2. AI Route Scoring Opacity
-*   **User Feedback:** *“The AI score makes comparisons neat, but I want to see the details. Why did a route get a 97 while another got a 15?”*
+*   **Pain Point:** Users could see the AI score on route cards but had no way to understand why one route scored higher than another, creating a trust gap.
 *   **Resolution:** Designed and developed the **AI Routing Report Modal**, showing exact weight parameters, slippage forecasts, gas savings, and the multi-hop path visualizer.
 *   **Git Commit Link:** [`9bd8ca4`](https://github.com/Cybercamp1/SteallarRoute/commit/9bd8ca4b34bde1c713b1981ee8b248a80436d4df)
 
 ### 3. Referral Rewards for User Growth
-*   **User Feedback:** *“I want to refer other people to use this router and earn cashback or rebates to offset the transaction spreads.”*
+*   **Pain Point:** No viral growth mechanism existed to incentivise users to invite others to the platform.
 *   **Resolution:** Developed the **Referral & Cashback Dashboard**, offering unique affiliate links (`?ref=YOUR_ADDRESS`) and direct claims of XLM gas cashback rewards.
 *   **Git Commit Link:** [`9bd8ca4`](https://github.com/Cybercamp1/SteallarRoute/commit/9bd8ca4b34bde1c713b1981ee8b248a80436d4df)
 
